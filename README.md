@@ -1,2 +1,2 @@
 # pokemon
-Pokédex. A fully responsive Application built with Node.js, Express, Postgre, Secqualize, React, and Redux  consuming the public PokéApi.
+Pokédex. A fully responsive Application built with Node.js, Express, Postgre, Secqualize, React, Redux, and Vite  consuming the public PokéApi. (includes testing)
