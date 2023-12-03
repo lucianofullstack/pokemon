@@ -1,0 +1,238 @@
+@font-face {
+    src: url("@/fnt/c64.woff2") format("woff2");
+    font-family: "c64";
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --dark: #20398d;
+    --light: #6076c5;
+    --steps: 20;
+}
+
+.landing {
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    min-width: 280px;
+    min-height: 100dvh;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: #333;
+    font-size: 2vmin;
+    font-family: 'c64', 'cascadia mono', consolas, monospace;
+}
+
+.landing article {
+    box-sizing: border-box;
+    width: 95vmin;
+    height: 95vmin;
+    border: 8vmin var(--light) solid;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 2vmin;
+    text-transform: uppercase;
+    animation-name: colours;
+    animation-delay: 6.3s;
+    animation-fill-mode: forwards;
+    animation-duration: .1s;
+    min-width: 280px;
+}
+
+@media screen and (max-width:767px) {
+    .landing article {
+        border-width: 4vmin
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.hide {
+    opacity: 0
+}
+
+.trainer {
+    background-image: url(@/img/intro/landingtrainer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 35vmin;
+    width: 30vmin;
+    display: block;
+    margin: 0 auto;
+    opacity: 0;
+    animation: appear 7s forwards;
+}
+
+.logo {
+    background-image: url(@/img/intro/landinglogo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 15vmin;
+    width: 30vmin;
+    display: block;
+    margin: 0 auto;
+    opacity: 0;
+    animation: appear 7s forwards;
+}
+
+.one {
+    animation: appear 4.8s forwards;
+}
+
+.two {
+    animation: appear 5.5s forwards;
+}
+
+.three {
+    animation: appear 6.2s forwards;
+}
+
+.four {
+    animation: appear 6.7s forwards;
+}
+
+.ok {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 2.5vmin !important;
+    opacity: 0;
+    animation: appear 7s forwards;
+}
+
+.ok a {
+    background: #CE372B;
+    padding: 14px;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #8C2022;
+}
+
+.ok a:hover,
+.ok a:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4AA52E;
+}
+
+.ok a:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px black solid;
+    border-bottom: 6px black solid;
+}
+
+.ok a:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+}
+
+.marquee {
+    position: relative;
+    margin-top: 3vmin;
+    overflow: hidden;
+    font-size: 9vmin !important;
+    color: #f3ff45;
+    text-shadow: -2px 2px 0 #FFB650,
+        -4px 4px 0 #f44336,
+        -10px 10px 0 #3b7fd9;
+    transform: skewX(-10deg);
+    opacity: 0;
+    animation: appear 7s forwards;
+}
+
+.marquee:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.marquee__inner {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.marquee__part {
+    flex-shrink: 0;
+    padding-inline: 2px;
+    animation-name: marquee;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.typing {
+    position: relative;
+    box-sizing: content-box;
+    width: 59%;
+
+    &::after {
+        content: "█";
+        position: absolute;
+        right: 0;
+        margin-top: -2px;
+        width: 100%;
+        color: var(--light);
+        background: var(--dark);
+        animation: typing 4s steps(var(--steps)) forwards,
+            caret .75s infinite,
+            stop 4.1s forwards;
+    }
+}
+
+@keyframes colours {
+    to {
+        font-size: 0px;
+        border-image: url('@/img/intro/bars.gif') 15% 7% Stretch;
+    }
+}
+
+@keyframes appear {
+
+    0%,
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    to {
+        width: 0;
+    }
+}
+
+@keyframes caret {
+    50% {
+        color: transparent
+    }
+}
+
+@keyframes stop {
+    to {
+        display: none;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

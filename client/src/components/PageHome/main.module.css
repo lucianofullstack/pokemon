@@ -1,0 +1,124 @@
+#logo {
+    cursor:pointer
+}
+.pokemons {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(254px, 100%/4)), 1fr));
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 35px;
+}
+
+.toolBar {
+    display: flex;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.toolBar + .toolBar {
+    margin: 1rem auto
+}
+
+.toolBar ul {
+    list-style: none;
+    margin: 0;
+    margin-left: -32px;
+}
+
+.toolBar li {
+    display: inline;
+    margin: 0;
+    margin-right: .75rem;
+    padding: 0;
+}
+
+.toolBar img {
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 33px;
+    filter: drop-shadow(3px 3px 3px #a2a39e);
+    cursor: pointer;
+    border: 4px solid #365eab;
+    border-radius: 15px;
+    box-sizing: content-box;
+    background-color: #ffcc01;
+    margin-top: 10px;
+}
+
+.search {
+    border: none;
+    outline: none;
+    background: white;
+    border-radius: 25px;
+    padding: 1rem 1.75rem;
+    width: 98%;
+    max-width: 660px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    -webkit-filter: drop-shadow(3px 3px 3px #c2c3be);
+    filter: drop-shadow(3px 3px 3px #c2c3be);
+    font-family: Poppins, sans-serif;
+}
+
+select.selector {
+    text-align: center !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #17285e;
+    background-color: #ffcc01;
+    border: 4px solid #365eab;
+    border-radius: 15px;
+    width: 8.75rem;
+    height: 2.6rem;
+    padding: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='MediumBlue' height='24' viewBox='0 0 24 24' width='32' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 106%;
+    background-position-y: 5px;
+    -webkit-filter: drop-shadow(3px 3px 3px #c2c3be);
+    filter: drop-shadow(3px 3px 3px #c2c3be);
+    margin: 0;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+select.selector::-webkit-scrollbar {
+    background-color: transparent;
+    width:12px;
+}
+
+select.selector::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+select.selector::-webkit-scrollbar-thumb {
+    background-color: #1967d2;
+    border-radius: 50px;
+    height:20px!important;
+}
+
+.option {
+    text-align: center;
+}
+
+.selector {
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+}
+
+.orderButton:hover {
+    background-color: #365eab;
+}

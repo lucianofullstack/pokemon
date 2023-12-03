@@ -1,0 +1,381 @@
+:root {
+    --color1: #efb2fb;
+    --color2: #acc6f8;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.card {
+    width: 260px;
+    height: 390px;
+    overflow: hidden;
+    background-color: #ddd9a1;
+    border: 16px solid #E8C51E;
+    border-radius: 20px;
+    box-shadow: -5px -5px 5px -5px var(--color1), 5px 5px 5px -5px var(--color2), -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent, 0 0 5px 0px rgba(255, 255, 255, 0), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
+    perspective: 2000px;
+    transform: translate3d(0.1px, 0.1px, 0.1px);
+    transition: none;
+    -webkit-animation: holoCard 12s ease 0s 1;
+    animation: holoCard 12s ease 0s 1;
+    z-index: 1;
+    margin: 30px 0;
+    padding: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card:before {
+    background-position: 50% 50%;
+    background-size: 300% 300%;
+    background-image: linear-gradient(115deg, transparent 0%, var(--color1) 25%, transparent 47%, transparent 53%, var(--color2) 75%, transparent 100%);
+    opacity: 0.5;
+    filter: brightness(0.5) contrast(1);
+    z-index: 1;
+    -webkit-animation: holoGradient 12s ease 0s 1;
+    animation: holoGradient 12s ease 0s 1;
+}
+
+.card:after {
+    opacity: 1;
+    background-image: url(@/img/card/sparkles.webp), url(@/img/card/holo.webp), linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
+    background-position: 50% 50%;
+    background-size: 160%;
+    background-blend-mode: overlay;
+    z-index: 2;
+    filter: brightness(1) contrast(1);
+    transition: all 0.33s ease;
+    mix-blend-mode: color-dodge;
+    opacity: 0.75;
+    -webkit-animation: holoSparkle 12s ease 0s 1;
+    animation: holoSparkle 12s ease 0s 1;
+}
+
+.card:before,
+.card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    mix-blend-mode: color-dodge;
+    transition: all 0.11s ease;
+}
+
+.name,
+.card table {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.name {
+    position: absolute;
+    top: 0;
+    width: 230px;
+    padding: 4px 0;
+    color: #ffcc01;
+    font-weight: bold;
+    font-size: 18pt;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px #17285e;
+    background-color: rgba(41, 74, 152, .9);
+}
+
+.sprite {
+    overflow: hidden;
+    height: 150px;
+    min-height: 150px;
+    width: 210px;
+}
+
+.sprite img {
+    width: 99%;
+    height: 99%;
+}
+
+.card table {
+    color: rgba (9, 11, 14, .4);
+    background-color: rgba(255, 255, 255, .1);
+    border: 2px solid RGBA(10, 110, 190, .1);
+    border-radius: 5px;
+    border-collapse: separate;
+    border-spacing: 4px;
+    font-weight: 500;
+    font-size: .85rem;
+    margin: 10px 0;
+}
+
+.card td {
+    padding: 0px 3px;
+}
+
+.card td:nth-of-type(2n) {
+    font-weight: bold;
+    border: 2px solid RGBA(10, 110, 190, .4);
+    border-radius: 5px;
+    text-align: center;
+    color: rgba(0, 0, 0, .6);
+    background-color: RGBA(1, 11, 19, .1);
+    box-shadow: inset;
+    margin: 0;
+    padding: 0;
+    min-width: 36px;
+    height: 28px;
+}
+
+.typeContainer img {
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .6));
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .6));
+    opacity: .97;
+}
+
+.typeContainer img+img {
+    margin: 0 7px
+}
+
+@-webkit-keyframes holoSparkle {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        background-position: 50% 50%;
+        filter: brightness(1.2) contrast(1.25);
+    }
+
+    5%,
+    8% {
+        opacity: 0.75;
+        background-position: 40% 40%;
+        filter: brightness(0.8) contrast(1.2);
+    }
+
+    13%,
+    16% {
+        opacity: 0.25;
+        background-position: 50% 50%;
+        filter: brightness(1.2) contrast(0.8);
+    }
+
+    35%,
+    38% {
+        opacity: 0.75;
+        background-position: 60% 60%;
+        filter: brightness(1) contrast(1);
+    }
+
+    55% {
+        opacity: 0.08;
+        background-position: 45% 45%;
+        filter: brightness(1.2) contrast(1.25);
+    }
+}
+
+@keyframes holoSparkle {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        background-position: 50% 50%;
+        filter: brightness(1.2) contrast(1.25);
+    }
+
+    5%,
+    8% {
+        opacity: 0.75;
+        background-position: 40% 40%;
+        filter: brightness(0.8) contrast(1.2);
+    }
+
+    13%,
+    16% {
+        opacity: 0.25;
+        background-position: 50% 50%;
+        filter: brightness(1.2) contrast(0.8);
+    }
+
+    35%,
+    38% {
+        opacity: 0.75;
+        background-position: 60% 60%;
+        filter: brightness(1) contrast(1);
+    }
+
+    55% {
+        opacity: 0.08;
+        background-position: 45% 45%;
+        filter: brightness(1.2) contrast(1.25);
+    }
+}
+
+@-webkit-keyframes holoGradient {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        background-position: 50% 50%;
+        filter: brightness(0.5) contrast(1);
+    }
+
+    5%,
+    9% {
+        background-position: 100% 100%;
+        opacity: 1;
+        filter: brightness(0.75) contrast(1.25);
+    }
+
+    13%,
+    17% {
+        background-position: 0% 0%;
+        opacity: 0.88;
+    }
+
+    35%,
+    39% {
+        background-position: 100% 100%;
+        opacity: 1;
+        filter: brightness(0.5) contrast(1);
+    }
+
+    55% {
+        background-position: 0% 0%;
+        opacity: 1;
+        filter: brightness(0.75) contrast(1.25);
+    }
+}
+
+@keyframes holoGradient {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        background-position: 50% 50%;
+        filter: brightness(0.5) contrast(1);
+    }
+
+    5%,
+    9% {
+        background-position: 100% 100%;
+        opacity: 1;
+        filter: brightness(0.75) contrast(1.25);
+    }
+
+    13%,
+    17% {
+        background-position: 0% 0%;
+        opacity: 0.88;
+    }
+
+    35%,
+    39% {
+        background-position: 100% 100%;
+        opacity: 1;
+        filter: brightness(0.5) contrast(1);
+    }
+
+    55% {
+        background-position: 0% 0%;
+        opacity: 1;
+        filter: brightness(0.75) contrast(1.25);
+    }
+}
+
+@-webkit-keyframes holoCard {
+
+    0%,
+    100% {
+        transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+    }
+
+    5%,
+    8% {
+        transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
+    }
+
+    13%,
+    16% {
+        transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
+    }
+
+    35%,
+    38% {
+        transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
+    }
+
+    55% {
+        transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
+    }
+}
+
+@keyframes holoCard {
+
+    0%,
+    100% {
+        transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+    }
+
+    5%,
+    8% {
+        transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
+    }
+
+    13%,
+    16% {
+        transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
+    }
+
+    35%,
+    38% {
+        transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
+    }
+
+    55% {
+        transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
+    }
+}
+
+.card.active:before,
+.card:hover:before {
+    background-image: linear-gradient(110deg, transparent 25%, var(--color1) 48%, var(--color2) 52%, transparent 75%);
+    background-position: 50% 50%;
+    background-size: 250% 250%;
+    transition: none;
+}
+
+.card:hover:after {
+    background-color: #998811;
+}
+
+.card:hover .sprite img {
+    -webkit-filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, .8));
+    filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, .8));
+}
+
+.card:hover table {
+    border: 2px solid RGBA(10, 110, 190, .4);
+    background-color: RGBA(1, 11, 19, .05);
+    color: #000;
+}
+
+.card:hover td:nth-of-type(2n) {
+    color: #000;
+}
+
+.card:hover .name {
+    background-image: url(@/img/card/sparkles.webp);
+    color: rgba(255, 204, 10, .9);
+    opacity: .9;
+}
+
+.card:hover .typeContainer img {
+    opacity: 1;
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .8));
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .8));
+}

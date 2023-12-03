@@ -1,0 +1,9 @@
+.pikachu {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.pikachu:hover {
+    -webkit-filter: drop-shadow(7px 7px 7px #000);
+    filter: drop-shadow(7px 7px 7px #000);
+}

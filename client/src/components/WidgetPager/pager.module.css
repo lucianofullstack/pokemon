@@ -1,0 +1,61 @@
+.pager ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.pager li {
+    margin-left: -5px;
+}
+
+.pager li a,
+.pager li a:visited {
+    font-weight: bold;
+    background-color: #ffcc01;
+    border: 4px solid #365eab;
+    border-radius: 15px;
+    min-width: 70px;
+    display: inline-block;
+    color: #025c9d;
+    text-decoration: none;
+    padding: .1rem 1rem;
+    font-size: 1.25rem;
+    text-align: center;
+    -webkit-filter: drop-shadow(3px 3px 3px #c2c3be);
+    filter: drop-shadow(3px 3px 3px #c2c3be);
+}
+
+.pager li:hover a {
+    background-color: #365eab;
+    border-color: #365eab;
+    color: #ffcc01
+}
+
+.pager .selected,
+.pager .selected:hover {
+    background-color: #365eab;
+    border-color: #365eab;
+    color: #e8e7c8
+}
+
+.text {
+    font-weight: bold;
+    font-size: 1.35rem;
+    padding-top: 2px;
+    color: #025c9d;
+    -webkit-filter: drop-shadow(3px 3px 3px #c2c3be);
+    filter: drop-shadow(3px 3px 3px #c2c3be);
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width:600px) {
+    .text {
+        display: none !important;
+    }
+
+    ul {
+        margin-left: 14px !important
+    }
+}

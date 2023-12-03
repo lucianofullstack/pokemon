@@ -1,0 +1,211 @@
+:root {
+    --white: #fff;
+    --gray: #eee;
+    --red: #e53935;
+    --black: #212121;
+}
+.pokeball {
+    position: relative;
+    margin:30px auto;
+    padding:0;
+    width: 220px;
+    height: 220px;
+    background: linear-gradient(to bottom,
+            var(--red),
+            var(--red) 48%,
+            var(--black) 48%,
+            var(--black) 55%,
+            var(--white) 55%);
+    border-radius: 50%;
+    border: 15px solid var(--black);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 8px 5px 0 rgba(0, 0, 0, 0.2);
+    animation-duration: 900ms;
+    animation-name: shake;
+    animation-iteration-count: infinite;
+}
+.pokeball:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+.pokeball:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 15px solid var(--black);
+    box-shadow: -5px -3px 0 rgba(0, 0, 0, 0.2);
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0) rotate(0);
+    }
+    15% {
+        transform: translateX(-10px) rotate(-10deg);
+    }
+    40% {
+        transform: translateX(-15px) rotate(-15deg);
+    }
+    60% {
+        transform: translateX(15px) rotate(15deg);
+    }
+}
+.chart {
+    --val: 0;
+    --spread: 70px;
+    --active: currentColor;
+    --inactive: #7fba82;
+    --background: #eeeed9;
+    --color: #361a03;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background:
+        radial-gradient(var(--background) var(--spread),
+            #0000 calc(var(--spread) * 1.01)),
+        conic-gradient(var(--active, currentColor) var(--val),
+            var(--inactive) 0);
+    color: var(--color);
+    font-weight: bold;
+    font-size: 14pt;
+    line-height: 0;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 2px #e0e0d6, 0 0 1px #e0e0d6, 0 0 0.2px #e0e0d6;
+}
+.green {
+    --active: #99e59d;
+    --inactive: #7fba82;
+    --color: #361a03;
+}
+.red {
+    --inactive: #ff938a;
+    --active: #fdca93;
+    --color: #361a03;
+}
+.blue {
+    --inactive: #93c3bf;
+    --active: #b2e9e4;
+    --color: #361a03;
+}
+.yellow {
+    --active: #ffe795;
+    --inactive: #ffd29b;
+    --color: #361a03;
+}
+.detail {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 35px;
+    align-items: flex-start;
+}
+.left,
+.right {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.left {
+    margin-top: 40px;
+    min-width: 265px;
+    max-width: 400px;
+}
+.right {
+    max-width: 500px;
+    margin-top: 5px;
+}
+.sprite {
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.sprite img {
+ max-height:310px;
+ min-height:310px;
+ max-width: 380px;
+    margin: 0 auto;
+    padding: 0;
+    filter: grayscale(.3);
+    opacity: .9;
+}
+.height {
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    font-size: clamp(9pt, 7vw, 18pt);
+    display: flex;
+    line-height: 52pt;
+    font-weight: bold;
+    color: #222120;
+    padding: 0px 10px;
+    border-radius: 10px;
+    height: 46pt;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px #525150, 0 0 1px #525150, 0 0 0.2px #525150;
+}
+.height .svg1 {
+    margin-top: 8px;
+    padding-right: 10px;
+    width: 52px;
+    height: 52px;
+}
+.height .svg2 {
+    margin-top: 0;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.typeContainer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-inverse;
+}
+.type {
+    color:#efeed8;
+    background-color: #222120;
+    text-shadow: 1px 1px 2px #525150, 0 0 1px #525150, 0 0 0.2px #525150;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 11pt;
+    border-radius: 5px ;
+    text-transform: capitalize;
+    padding: 5px 7px;
+    margin-top: 18px;
+}
+.type + .type {
+    border-radius:  0 5px  5px 0;
+    padding: 5px 7px 5px 0;
+    margin-left: -5px;
+
+}
+.type + .type::before {
+    content : "\00B7";
+    margin-left: 6px;
+    margin-right:10px;
+}
