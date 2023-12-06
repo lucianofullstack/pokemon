@@ -14,4 +14,6 @@ Main Screen
 
 Intro
 
+<img src="./README/detail.png" alt="detail">
 
+Detail
