@@ -17,3 +17,7 @@ Intro
 <img src="./README/detail.png" alt="detail">
 
 Detail
+
+<img src="./README/card.gif" alt="card">
+
+Card detail
