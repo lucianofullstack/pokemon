@@ -6,7 +6,12 @@ A fully responsive Application built with Node.js, Express, Postgre, Secqualize,
 
 ## Frontend
 
-<img src="./README/1.png" alt="screenshot">
+<img src="./README/main.png" alt="screenshot">
 
 Main Screen
+
+<img src="./README/intro.gif" alt="intro">
+
+Intro
+
 
