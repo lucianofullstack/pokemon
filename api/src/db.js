@@ -1,4 +1,4 @@
-require ('./defaults')
+require ('./modules/defaults')
 
 const 
 { Sequelize } = require('sequelize'),
@@ -60,8 +60,6 @@ sequelize
 })
 
 sequelizeModels()
-
-
 
 const 
 { Pokemon,Type } = sequelize.models,

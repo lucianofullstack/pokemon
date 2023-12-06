@@ -1,4 +1,4 @@
-require ('./defaults')
+require ('./modules/defaults')
 
 const
 fs           = require('fs'),
@@ -20,12 +20,12 @@ appRoute     = (route = "routes", ext = ".js") => {
           console.log(`✔  ROUTE ${fileName}`)
        }
     })
-    require('./favicon')(app)
+    require('./modules/favicon')(app)
 }
 
 if ( process.env.NODE_ENV!=='production' 
   && process.env.VERBOSE > 1) {
-  require ('./prompt')(process.env)
+  require ('./modules/prompt')(process.env)
 }
 
 app = express()
