@@ -21,3 +21,11 @@ Detail
 <p align="center"><img src="./README/card.gif" alt="card"></p>
 
 Card detail
+
+## Backend
+
+<img src="./README/back.gif" alt="back">
+
+## Testing
+
+<img src="./README/testing.gif" alt="testing">
