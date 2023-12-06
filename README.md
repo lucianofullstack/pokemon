@@ -18,6 +18,6 @@ Intro
 
 Detail
 
-<center><img src="./README/card.gif" alt="card"></center>
+<p align="center"><img src="./README/card.gif" alt="card"></p>
 
 Card detail
