@@ -1,6 +1,8 @@
 require ('./modules/defaults')
 
 const 
+fs   = require('fs'),
+path = require('path'),
 { Sequelize } = require('sequelize'),
 { DB_NAME, DB_DIALECT, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD } = process.env,
 sequelize = new Sequelize 
@@ -31,7 +33,12 @@ sequelize = new Sequelize
       keepAlive: true,
       logging:  process.env.NODE_ENV === 'production' ? false : console.log ,
       native:   process.env.NODE_ENV === 'production' ? true : false ,
-      ssl:      process.env.NODE_ENV === 'production' ? { require: true } : false ,
+      ssl:      process.env.NODE_ENV === 'production' 
+      ? { require: true, 
+          rejectUnauthorized: true, 
+          ca: fs.readFileSync(path.join(__dirname, 'root-certs.crt')).toString()
+        } 
+      : false ,
     },
   }
 ), 

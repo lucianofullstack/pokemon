@@ -1,7 +1,7 @@
 const
 { Router } = require('express'),
 router = Router()
-router.get('/', async (res) => {
+router.get('/', async (req, res) => {
   let 
   since = new Date(process.env.SINCE).getTime(),
    now  = new Date().getTime(),
