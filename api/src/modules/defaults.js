@@ -22,7 +22,7 @@ const defaults = () => { return {
                   const db = {},
                     result = require('dotenv').config({ processEnv: db })
                   if (!result.error) {
-                    "PORT, MODE_ENV, DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_DIALECT, CLIENT_PORT, CLIENT_URL"
+                    "PORT, NODE_ENV, DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_DIALECT, CLIENT_PORT, CLIENT_URL"
                       .split(", ")
                       .forEach((value) => {
                         if ( db[value]) {
